@@ -143,15 +143,16 @@ public class AdvancedEmpDeptTests
 
         var result = emps
             .Join(depts, e => e.DeptNo, d => d.DeptNo, (e, d) => new { e, d })
-            .Join(grades, ed => ed.e.Sal, s => s.Losal, (ed, s) => new { ed.e, ed.d, s })
-            .Where(joined => joined.e.Sal >= joined.s.Losal && joined.e.Sal <= joined.s.Hisal)
-            .Select(joined => new
-            {
-                joined.e.EName,
-                joined.d.DName,
-                joined.s.Grade
-            })
-            .ToList();  
+            .SelectMany(
+                ed => grades.Where(s => ed.e.Sal >= s.Losal && ed.e.Sal <= s.Hisal),
+                (ed, s) => new
+                {
+                    ed.e.EName,
+                    ed.d.DName,
+                    s.Grade
+                })
+            .ToList();
+
         
         Assert.Contains(result, r => r.EName == "ALLEN" && r.DName == "SALES" && r.Grade == 3);
     }

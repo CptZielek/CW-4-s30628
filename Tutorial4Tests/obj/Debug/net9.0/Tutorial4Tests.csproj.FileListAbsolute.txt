@@ -313,3 +313,4 @@ D:\Pobrane\Tutorial4\Tutorial4Tests\obj\Debug\net9.0\refint\Tutorial4Tests.dll
 D:\Pobrane\Tutorial4\Tutorial4Tests\obj\Debug\net9.0\Tutorial4Tests.pdb
 D:\Pobrane\Tutorial4\Tutorial4Tests\obj\Debug\net9.0\Tutorial4Tests.genruntimeconfig.cache
 D:\Pobrane\Tutorial4\Tutorial4Tests\obj\Debug\net9.0\ref\Tutorial4Tests.dll
+D:\Pobrane\Tutorial4\Tutorial4Tests\obj\Debug\net9.0\Tutorial4Tests.sourcelink.json
